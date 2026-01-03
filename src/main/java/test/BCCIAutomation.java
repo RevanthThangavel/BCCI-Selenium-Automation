@@ -60,7 +60,7 @@ public class BCCIAutomation {
         // 7. Get all player cards (DIV based, stable XPath)
         List<WebElement> playerCards =
                 driver.findElements(
-                    By.xpath("(//a[contains(@href,'/players/')])[position()<=11]")
+                    By.xpath("(//a[@data-player_name])[position()<=11]")
                 );
 
 //        int i = 11;
