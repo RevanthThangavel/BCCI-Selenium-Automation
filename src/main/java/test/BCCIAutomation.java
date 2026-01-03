@@ -63,7 +63,6 @@ public class BCCIAutomation {
                     By.xpath("(//a[@data-player_name])[position()<=11]")
                 );
 
-//        int i = 11;
         for (int i = 0; i < playerCards.size(); i++) {
 
             WebElement player = playerCards.get(i);
