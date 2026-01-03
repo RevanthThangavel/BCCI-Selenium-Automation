@@ -46,34 +46,21 @@ public class BCCIAutomation {
         driver.navigate().back();
 
         // 5. View Ravindra Jadeja
-        WebElement jadeja =
-                driver.findElement(By.xpath("//a[@data-player_name='Ravindra Jadeja']"));
+        WebElement jadeja = driver.findElement(By.xpath("//a[@data-player_name='Ravindra Jadeja']"));
         jadeja.click();
         driver.navigate().back();
-
-        // 6. View KL Rahul
-        WebElement rahul =
-                driver.findElement(By.xpath("//a[@data-player_name='Kl Rahul']"));
+        
+        WebElement rahul = driver.findElement(By.xpath("//a[@data-player_name='Kl Rahul']"));
         rahul.click();
         driver.navigate().back();
 
-        // 7. Get all player cards (DIV based, stable XPath)
-        List<WebElement> playerCards =
-                driver.findElements(
-                    By.xpath("(//a[@data-player_name])[position()<=11]")
-                );
+        List<WebElement> playerCards = driver.findElements(By.xpath("(//a[@data-player_name])[position()<=11]"));
 
         for (int i = 0; i < playerCards.size(); i++) {
-
             WebElement player = playerCards.get(i);
-
-            // Get actual values from attributes
             String name = player.getAttribute("data-player_name");
-
-
             System.out.println("Name : " + name);
         }
-  
         driver.quit();
     }
 }
